@@ -1,0 +1,73 @@
+Application ALAO pour répondre à un problème
+
+Problème identifié : l'apprentissage/perfectionnement de la prosodie
+
+Langue : Français/anglais
+
+Objectif : mettre en place un eapplication qui permet d'évalauer la prosodie de l'apprenant + l'aider dans l'apprentissage/l'habituation à la prosodie
+
+Public : anyone
+
+Présentation d'une maquette :
+
+.png
+
+Difficultés a priori :
+
+- trouver une représentation de la prosodie facile d'accès/compréhensible + linguistiquement viable
+
+- mesure prosodique de l'exemple et de l'apprenant ?
+Problème : 
+consitution d'un corpus ?
+
+BBC => problème de langue travaillée/réfléchie
+Corpus ecologique : permet d'avoir des exemples plus "authentiques", mais beaucoup de variabilité, et compliqué à rassembler
+
+Pour une phrase donnée, l'idéal serait d'avoir plusieurs exemples de locuteurs différents pour avoir une "moyenne" prosodique ? 
+=> permet d'avoir une "marge d'erreur" (ne pas calculer la prosodie d'un locuteur, mais prendre en compte l'accuracy plus que la precision
+
+ex : si la prosodie n'est pas à la bonne fréquence mais que ça suit la même évolution proportionnelle alors c'est ok
+
+Etape de comparaison entre la prosodie exemple et la prosodie de l'apprenant 
+
+Comparer les mesures de PRAAT entre deux segments, si ça suit la même courbe d'évolution proportionelle dans ce cas c'est OK
+
+Autre possibilité : calcul de similarité entre deux prosodie ? => pourcentage ?
+
+RQ : est-ce que tous les segments d'une phrase ont le même poids prosodique ? Autrement dit, est-ce qu'il n'y a pas des mouvements prosodiques plus importants que d'autres dans une langue donnée ?
+=> littérature linguistique
+
+
+Prosodie exemple :
+
+Passer par Praat pour aligner texte et signal
+Prendre chaque syllabe et observer la prosodie
+selon les valeurs, coloriser le texte sur l'interface (en supposant qu'on part sur un système de colorisation) 
+
+NB : espérer qu'il n'y ait pas trop de configurations prosodiques
+Point de reflexion : sur une échelle du général au détail : où se positionner ? (quelle nuance prendre en compte ?)
+
+
+- comment proposer la correction ?
+
+traiter le signal de l'apprenant de la même manière que pour l'exemple (càd aligner son signal avec le texte (qui ne bouge pas) et lancer les calculs)
+Coloriser les syllabes qui ont "bien" été prononcées, et laisser blanches celles ne semblent pas correspondre 
+Laisser blanc = ne pas s'impliquer dans le fait de jauger de quelle configuration prosodiue il s'agit, mais d'un côté on perd en feedback (exemple : dire à l'apprenant qu'il a monté alors qu'il aurait du descendre)
+Moyen d'arnaquer un peu : laisser la possibilité de réécouter les segments juste/faux etc et faire la comparaison tout seul
+
+Laisser la possibilité de faire plusieurs enregistrements, laisser la possibilité de passer à la phrase suivante que si y'a 50% de prosodie similaire (en supposant qu'il n'y pas de "poids prosodique")
+
+
+Si on récupère une notion de pourcentage, déclencher un pop-up qui donne le pourcentage de similarité calculé + un encouragement ou un truc comme ça
+Encouragement : pas tout le temps le même message mais faire un pool de plusieurs phrases tirées aléatoirement
+
++ loin dans la gamification : faire un système de succès
+
+
+
+Critère de fluidité ?
+Problème des atefacts laissés par l'utilisateur (hésitations, etc...)
+Comment les traiter ?
+=> Ne pas les traiter 
+
+Si y'a des comptes utilisateurs : proposer une représentation des stats

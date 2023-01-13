@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{%load static%}
+
+{%block content%}
+    <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+        <div class="card-header">EXEMPLE</div>
+            <div class="card-body">
+                <h4 class="card-title">Lecture de l'exemple</h4>
+                <button id="affiche">Afficher le texte de l'audio</button>
+                <!-- Mettre ici le lecteur de l'exemple -->
+                <div>
+                    <audio controls>
+                        <source src="{% static 'exercices/test1/test1.wav'%}" type="audio/wav">
+                    </audio>
+                </div>
+                <p class="card-text" style='display:none'> Les carottes sont cuites</p>
+                
+    </div>
+
+    <div class="card border-secondary mb-3" style="max-width: 50rem;">
+        <div class="card-header">Enregistrements</div>
+            <div class="card-body">
+                <h4 class="card-title">À toi de jouer</h4>
+                <p class="card-text"></p>
+                <select id="encodingTypeSelect" style='display:none'>
+                    <option value="wav">Waveform Audio (.wav)</option>
+                </select>
+                <!-- Script enregistrement -->
+                <div id="Buttons">
+                    <button id="recordButton">Enregistrement</button>
+                    <button id="stopButton" disabled>Stop</button>
+                    <button id="comparer" disabled onclick="addRec()"> Comparer</button>
+                </div>
+                <div id="formats"></div>
+                <div style="display:none">
+                    <pre>Log</pre>
+                    <pre id="log"></pre>
+                </div>
+
+                <ol id="recordingsList" class="mt-2" style="min-height: 50px;"></ol>
+
+            </div>
+        </div>
+
+        <div id="actionBlock" style="display: none;">
+            <div class="mainLoad">
+                <div class="loader">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
+
+{% block javascript %}
+<script src="{% static 'scripts/WebAudioRecorder.min.js' %}"></script>
+<!-- <script type="text/html" src="{% static 'scripts/WebAudioRecorderWav.min.js' %}"></script> -->
+<script src="{% static 'scripts/record.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{%load static%}
+
+{%block content%}
+    <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+        <div class="card-header">Listes exercices</div>
+            <div class="card-body">
+                <h4 class="card-title">Exercice 1</h4>
+                    <a class="btn btn-primary" href="/test1/">Premier exercice</a>
+
+                <h4 class="card-title">Exercice 2</h4>
+                    <p> En chantier !</p>
+
+                <h4 class="card-title">Exercice 3</h4>
+                    <p> En chantier !</p>
+            </div>
+    </div>
+
+
+    </div>
+
+{%endblock%}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'scripts/WebAudioRecorder.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/record.js' %}"></script>
+{% endblock %}
